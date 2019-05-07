@@ -187,7 +187,7 @@ struct s2n_cert_chain_and_key *s2n_cert_chain_and_key_new(void)
     return chain_and_key;
 }
 
-static int s2n_cert_chain_and_key_load_sans(struct s2n_cert_chain_and_key *chain_and_key, X509 *x509_cert)
+int s2n_cert_chain_and_key_load_sans(struct s2n_cert_chain_and_key *chain_and_key, X509 *x509_cert)
 {
     notnull_check(chain_and_key->san_names);
 
@@ -230,7 +230,7 @@ static int s2n_cert_chain_and_key_load_sans(struct s2n_cert_chain_and_key *chain
     return 0;
 }
 
-static int s2n_cert_chain_and_key_load_cn(struct s2n_cert_chain_and_key *chain_and_key, X509 *x509_cert)
+int s2n_cert_chain_and_key_load_cn(struct s2n_cert_chain_and_key *chain_and_key, X509 *x509_cert)
 {
     notnull_check(chain_and_key->cn_names);
 
